@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "method": "GET",
+      "path": "/api/testimonials",
+      "auth": false,
+      "purpose": "Get list of gym owner testimonials for display on the landing page.",
+      "request_body": "",
+      "response": "{ testimonials: [ { id: int, name: string, title: string, gym_name: string, photo_url: string, quote: string } ] }"
+    },
+    {
+      "method": "GET",
+      "path": "/api/pricing",
+      "auth": false,
+      "purpose": "Get the details for each of the three subscription tiers for Pricing section.",
+      "request_body": "",
+      "response": "{ tiers: [ { id: int, name: string, price_per_month: number, features: [string], cta_label: string } ] }"
+    },
+    {
+      "method": "GET",
+      "path": "/api/features",
+      "auth": false,
+      "purpose": "Get all AI-powered features and descriptions for the Features section.",
+      "request_body": "",
+      "response": "{ features: [ { id: int, icon: string, name: string, description: string } ] }"
+    },
+    {
+      "method": "GET",
+      "path": "/api/faq",
+      "auth": false,
+      "purpose": "Get a list of top FAQs and answers for gym owners.",
+      "request_body": "",
+      "response": "{ faqs: [ { id: int, question: string, answer: string } ] }"
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "project_metadata": {
+    "project_name": "gym-flow-hub",
+    "project_category": "SaaS Landing Page",
+    "description": "Glassmorphism, premium SaaS landing for GymFlow: the AI gym management platform. All-in-one, dark/emerald modern theme, animated dashboard visuals, and conversion-focused flows.",
+    "core_purpose": "Attract gym owners/managers to try GymFlow for smarter, AI-powered operations (signups, conversions).",
+    "target_audience": "Gym owners, gym managers, fitness business professionals evaluating management software",
+    "key_features": [
+      "AI-powered member and staff management",
+      "Predictive attendance and analytics",
+      "Automated billing and payments",
+      "Personalized workout recommendations",
+      "Real-time dashboard and reporting",
+      "Flexible, conversion-focused pricing tiers",
+      "Gym owner testimonials and FAQ"
+    ]
+  },
+  "brand_facts": {
+    "business_name": "GymFlow",
+    "tagline": "",
+    "phones": [],
+    "emails": [],
+    "whatsapp": "",
+    "addresses": [],
+    "locations": [],
+    "services": [
+      "The Complete AI-Powered Gym Management Platform"
+    ],
+    "social_links": {},
+    "extra_facts": {}
+  },
+  "frontend": {
+    "pages": [
+      {
+        "page_name": "Home",
+        "route": "/",
+        "show_in_nav": false,
+        "nav_order": 1,
+        "purpose": "Public SaaS landing to attract and convert gym owners/managers to GymFlow.",
+        "description": "Single, fullpage, responsive landing for GymFlow. Each section is a dedicated component rendered in sequence. Background: dark (#0F172A) with animated/gradient overlays and glassmorphic card sections. Large CTA headline, glowing emerald buttons, rich iconography. Entire auth flow (login, register, forgot password) handled as discrete modals—not routes—mounted contextually via Framer Motion. Smooth scroll, anchor navigation, professional chart mockups in hero via Recharts (static data). All content loads with subtle fade/slide animations. Footer glass with emerald icons and links.",
+        "sections": [
+          "Header",
+          "HeroSection",
+          "FeaturesSection",
+          "HowItWorksSection",
+          "PricingSection",
+          "TestimonialsSection",
+          "FAQSection",
+          "CTASection",
+          "Footer",
+          "LoginModal",
+          "RegisterModal",
+          "ForgotPasswordModal"
+        ],
+        "content_notes": "Contains all defined landing sections as vertical flow: Header (sticky, glass) → HeroSection (animated dashboard/CTA) → FeaturesSection (AI-powered, icons, fetched via API) → HowItWorksSection → PricingSection (3 tiers, API) → TestimonialsSection (API loaded) → FAQSection (API loaded) → CTASection (motion highlights) → Footer. Authentication handled with glassmorphic Login/Register/ForgotPassword modals triggered from Header. Consistent dark glassmorphism, emerald brand. Every section uses modern professional SaaS dashboard styling, chart and iconography per the gym domain.",
+        "data_needs": [
+          "GET /api/features",
+          "GET /api/pricing",
+          "GET /api/testimonials",
+          "GET /api/faq"
+        ],
+        "is_protected": false
+      }
+    ],
+    "navigation": {
+      "type": "horizontal",
+      "position": "top",
+      "style": "glassmorphism, emerald accent, modern dark, sticky",
+      "has_logo": true,
+      "has_search": false,
+      "extra_items": [],
+      "links": [
+        {
+          "label": "Features",
+          "route": "#features"
+        },
+        {
+          "label": "Pricing",
+          "route": "#pricing"
+        },
+        {
+          "label": "Testimonials",
+          "route": "#testimonials"
+        },
+        {
+          "label": "Login",
+          "route": "#login"
+        },
+        {
+          "label": "Register",
+          "route": "#register"
+        }
+      ]
+    },
+    "theme": {
+      "design_dna": "Modern Premium SaaS Dashboard. Glassmorphism cards on dark backgrounds (#0F172A), primary emerald (#10B981), secondary slate, UI chrome with backdrops. Large sans-serif font, bold weights. Elevation/shadows for glass cards. Rich, professional iconography. Subtle but confident motion.",
+      "color_scheme": "dark",
+      "primary_color": "#10B981",
+      "secondary_color": "#334155",
+      "accent_color": "#10B981",
+      "font_family": "'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
+      "font_type": "sans-serif",
+      "border_radius": "xl (1rem rounded)",
+      "shadow_style": "xl, glass/glow for focus states",
+      "animation_style": "Framer Motion - smooth fade, scale, slide; buttons with soft hover accent",
+      "interaction_style": "Smooth, polished, modal opening/closing via Framer Motion, glass cards with direct feedback."
+    },
+    "components": [
+      {
+        "component_name": "Header",
+        "type": "layout",
+        "description": "Dark, glassmorphism top nav with logo (GymFlow, emerald gradient), sticky position, navigation links to Features, Pricing, Testimonials, and Login/Register (opens modals), right-aligned. Rounded-pill CTA button in emerald for 'Get Started'. Uses semi-transparent glassy background, emerald border accent, and drop shadow.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Provides main site navigation with brand, menu links, and quick auth trigger.",
+        "props": []
+      },
+      {
+        "component_name": "HeroSection",
+        "type": "section",
+        "description": "Full viewport height, dark glassmorphic card with animated emerald/white headline 'GymFlow', subheading: 'The Complete AI-Powered Gym Management Platform', motion-animated dashboard mockup image floated right (embeds charts, widgets with emerald highlights), and two CTA buttons: 'Start Free Trial' (emerald, bold) and 'See Features' (secondary, bordered). Large, modern sans-serif typography and emerald accented visual cues.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Immediately grabs interest, conveys GymFlow's value and AI focus, and drives direct calls to action.",
+        "props": []
+      },
+      {
+        "component_name": "FeaturesSection",
+        "type": "section",
+        "description": "Three-column dark glassmorphic grid with large emerald AI-themed icons for features (e.g., Smart Scheduling, Predictive Attendance, Automated Billing, Personalized Plans, Real-time Analytics), each with a bold heading and concise, real-world benefit description. Subtle Framer Motion fade-in on scroll. Uses API response for live, realistic content.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Showcase AI-powered feature set clearly with visual appeal.",
+        "props": []
+      },
+      {
+        "component_name": "HowItWorksSection",
+        "type": "section",
+        "description": "Three-step horizontal flow on dark/emerald background: 1) Sign Up, 2) Set Up Your Gym, 3) Manage Smarter. Each step is a floating glass card with number, title, step description, and motion icons. Connects with thin emerald progress lines.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Illustrates GymFlow's onboarding simplicity and intelligent workflow.",
+        "props": []
+      },
+      {
+        "component_name": "PricingSection",
+        "type": "section",
+        "description": "Three responsive glassmorphism cards for Starter, Pro, Enterprise tiers. Each card: plan name, price (USD/month), bullet features, and a 'Start Free Trial' CTA (emerald solid with gradient hover). Professional sans-serif, soft emerald backgrounds, glass card blur/frost, drop shadow. Data from backend endpoint with authentic plan details.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Clearly describes value/feature difference for each plan, drives signups.",
+        "props": []
+      },
+      {
+        "component_name": "TestimonialsSection",
+        "type": "section",
+        "description": "Carousel or grid of 3-4 glass cards featuring gym owner photo, name, gym name, role/title, and authentic quote on GymFlow's benefits. Transparent dark glass background, emerald gradients for accent, Recharts-powered star average if present. Data loaded from backend.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Builds social proof through realistic, AI-focused gym owner feedback.",
+        "props": []
+      },
+      {
+        "component_name": "FAQSection",
+        "type": "section",
+        "description": "Accordion on a glass dark card with top FAQs on AI gym management, highlighting privacy, onboarding, support, and member experience advantages. Emerald accent lines. Data-driven from backend.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Addresses pre-signup concerns, shows GymFlow's expertise.",
+        "props": []
+      },
+      {
+        "component_name": "CTASection",
+        "type": "section",
+        "description": "Full-width dark glass card just above footer with bold call-to-action 'Ready to Supercharge Your Gym?' and prominent emerald 'Start Free Trial' button with pulse animation. Subtext highlights AI innovation and success metrics.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Drives conversion with compelling final CTA.",
+        "props": []
+      },
+      {
+        "component_name": "Footer",
+        "type": "layout",
+        "description": "Wide glassmorphic footer with white/emerald brand, quick links (Features, Pricing, Support), and copyright. Slab glass card with lighter dark tone and emerald colored icons for social links (if any provided).",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Provides branding, navigation, and legal links.",
+        "props": []
+      },
+      {
+        "component_name": "LoginModal",
+        "type": "modal",
+        "description": "Centered glasscard modal on dark blurred overlay. Input fields: Email, Password, Login button (emerald), link to open Register modal, and 'Forgot Password?' link to open ForgotPassword modal. Smooth mount/unmount animations. Error and success states clearly displayed.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Allows gym users to log in securely.",
+        "props": []
+      },
+      {
+        "component_name": "RegisterModal",
+        "type": "modal",
+        "description": "Glassmorphic modal with darker overlay, fields for: Full Name, Email, Password, Confirm Password. Emerald submit button. Allows quick registration. Post-register, automatically transitions to Dashboard placeholder (not included in landing PRD). Accessible from Header/Register button.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Enables new gym owners to join GymFlow.",
+        "props": []
+      },
+      {
+        "component_name": "ForgotPasswordModal",
+        "type": "modal",
+        "description": "Glasscard modal with input for registered email, emerald button labeled 'Send Reset Link', confirmation message state. Linked from LoginModal's 'Forgot Password?' link. Overlay, animations, and error handling per SaaS standards.",
+        "used_on": [
+          "Home"
+        ],
+        "purpose": "Allows users to reset their password.",
+        "props": []
+      }
+    ],
+    "layout": {
+      "has_header": true,
+      "has_footer": true,
+      "has_sidebar": false,
+      "max_width": "1280px",
+      "spacing": "px-6 py-12",
+      "footer_links": [
+        {
+          "label": "Features",
+          "route": "#features"
+        },
+        {
+          "label": "Pricing",
+          "route": "#pricing"
+        },
+        {
+          "label": "Support",
+          "route": "#faq"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "requires_backend": true,
+    "apis": [
+      {
+        "endpoint": "/api/testimonials",
+        "method": "GET",
+        "purpose": "Get list of gym owner testimonials for display on the landing page.",
+        "request_body": "",
+        "response": "{ testimonials: [ { id: int, name: string, title: string, gym_name: string, photo_url: string, quote: string } ] }",
+        "auth": false,
+        "used_by": [
+          "TestimonialsSection"
+        ]
+      },
+      {
+        "endpoint": "/api/pricing",
+        "method": "GET",
+        "purpose": "Get the details for each of the three subscription tiers for Pricing section.",
+        "request_body": "",
+        "response": "{ tiers: [ { id: int, name: string, price_per_month: number, features: [string], cta_label: string } ] }",
+        "auth": false,
+        "used_by": [
+          "PricingSection"
+        ]
+      },
+      {
+        "endpoint": "/api/features",
+        "method": "GET",
+        "purpose": "Get all AI-powered features and descriptions for the Features section.",
+        "request_body": "",
+        "response": "{ features: [ { id: int, icon: string, name: string, description: string } ] }",
+        "auth": false,
+        "used_by": [
+          "FeaturesSection"
+        ]
+      },
+      {
+        "endpoint": "/api/faq",
+        "method": "GET",
+        "purpose": "Get a list of top FAQs and answers for gym owners.",
+        "request_body": "",
+        "response": "{ faqs: [ { id: int, question: string, answer: string } ] }",
+        "auth": false,
+        "used_by": [
+          "FAQSection"
+        ]
+      }
+    ],
+    "database": {
+      "models": [
+        {
+          "model_name": "User",
+          "fields": [
+            {
+              "name": "id",
+              "type": "uint"
+            },
+            {
+              "name": "email",
+              "type": "string"
+            },
+            {
+              "name": "password_hash",
+              "type": "string"
+            },
+            {
+              "name": "full_name",
+              "type": "string"
+            },
+            {
+              "name": "role",
+              "type": "string"
+            },
+            {
+              "name": "created_at",
+              "type": "time.Time"
+            },
+            {
+              "name": "updated_at",
+              "type": "time.Time"
+            }
+          ],
+          "relationships": [],
+          "indexes": [
+            "email"
+          ]
+        },
+        {
+          "model_name": "Member",
+          "fields": [
+            {
+              "name": "id",
+              "type": "uint"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "type": "string"
+            },
+            {
+              "name": "phone",
+              "type": "string"
+            },
+            {
+              "name": "membership_plan_id",
+              "type": "uint"
+            },
+            {
+              "name": "join_date",
+              "type": "time.Time"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "relationships": [
+            "MembershipPlan"
+          ],
+          "indexes": [
+            "email",
+            "membership_plan_id"
+          ]
+        },
+        {
+          "model_name": "Trainer",
+          "fields": [
+            {
+              "name": "id",
+              "type": "uint"
+            },
+            {
+              "name": "full_name",
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "type": "string"
+            },
+            {
+              "name": "specialty",
+              "type": "string"
+            },
+            {
+              "name": "phone",
+              "type": "string"
+            }
+          ],
+          "relationships": [],
+          "indexes": [
+            "full_name"
+          ]
+        },
+        {
+          "model_name": "Attendance",
+          "fields": [
+            {
+              "name": "id",
+              "type": "uint"
+            },
+            {
+              "name": "date",
+              "type": "date"
+            },
+            {
+              "name": "member_id",
+              "type": "uint"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "relationships": [
+            "Member"
+          ],
+          "indexes": [
+            "date",
+            "member_id"
+          ]
+        },
+        {
+          "model_name": "MembershipPlan",
+          "fields": [
+            {
+              "name": "id",
+              "type": "uint"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "name": "monthly_price",
+              "type": "float"
+            },
+            {
+              "name": "benefits",
+              "type": "string"
+            }
+          ],
+          "relationships": [],
+          "indexes": [
+            "name"
+          ]
+        },
+        {
+          "model_name": "Payment",
+          "fields": [
+            {
+              "name": "id",
+              "type": "uint"
+            },
+            {
+              "name": "member_id",
+              "type": "uint"
+            },
+            {
+              "name": "amount",
+              "type": "float"
+            },
+            {
+              "name": "date",
+              "type": "time.Time"
+            },
+            {
+              "name": "method",
+              "type": "string"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "relationships": [
+            "Member"
+          ],
+          "indexes": [
+            "member_id",
+            "date"
+          ]
+        },
+        {
+          "model_name": "Notification",
+          "fields": [
+            {
+              "name": "id",
+              "type": "uint"
+            },
+            {
+              "name": "user_id",
+              "type": "uint"
+            },
+            {
+              "name": "type",
+              "type": "string"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "name": "is_read",
+              "type": "bool"
+            },
+            {
+              "name": "created_at",
+              "type": "time.Time"
+            }
+          ],
+          "relationships": [
+            "User"
+          ],
+          "indexes": [
+            "user_id",
+            "is_read"
+          ]
+        }
+      ]
+    },
+    "authentication": {
+      "required": true,
+      "type": "standard",
+      "providers": [
+        "email_password"
+      ],
+      "protected_apis": null
+    },
+    "external_apis": [],
+    "file_storage": {
+      "required": false,
+      "types": [],
+      "max_size": ""
+    }
+  },
+  "technical_specs": {
+    "frontend": {
+      "framework": "React 19",
+      "routing": "react-router-dom (anchors only, single-page)",
+      "styling": "Tailwind v4, custom glassmorphism/emerald utilities",
+      "state_management": "React state/hooks, context for auth modal states",
+      "animation": "Framer Motion, smooth glassmorphism transitions, Recharts for dashboard visuals",
+      "dependencies": [
+        "react",
+        "react-dom",
+        "react-router-dom",
+        "tailwindcss",
+        "framer-motion",
+        "react-icons",
+        "recharts",
+        "vite"
+      ]
+    },
+    "backend": {
+      "framework": "Go (Gin)",
+      "database": "PostgreSQL",
+      "orm": "GORM",
+      "auth": "internal/auth (email/password standard, user model extended for roles)",
+      "dependencies": [
+        "gin",
+        "gorm",
+        "pq",
+        "bcrypt",
+        "validator",
+        "internal/auth",
+        "internal/apperror"
+      ]
+    }
+  },
+  "raw_user_prompt": "Build a production-ready SaaS landing page for \"GymFlow\" - The Complete AI-Powered Gym Management Platform. \n\nTech Stack: React 19, Vite, Tailwind CSS, React Router DOM, Framer Motion, React Icons, Recharts.\n\nTheme: Modern Premium SaaS Dashboard. Primary Color: Emerald Green (#10B981). Secondary: Slate. Background: Dark (#0F172A). Cards: Glassmorphism. Animations: Smooth and professional.\n\nLanding Page Sections:\n1. Hero Section - with animated headline, CTA buttons, hero dashboard mockup\n2. Features Section - AI-powered features with icons and descriptions\n3. How It Works - 3-step process\n4. Pricing - 3 tiers (Starter, Pro, Enterprise)\n5. Testimonials - gym owner reviews\n6. FAQ - accordion\n7. CTA Section - bottom call to action\n8. Footer\n\nAlso include: Login, Register, Forgot Password pages, and a full Dashboard layout with sidebar, charts, widgets, and all sidebar menu items (Dashboard, Members, Trainers, Attendance, Membership Plans, Payments, Reports, Notifications, Settings).\n\nUse realistic gym data. No lorem ipsum. Glassmorphism cards. Dark theme throughout.\n\nCRITICAL SYSTEM OVERRIDE: The user is on a FREE plan. The PRD MUST include exactly ONE landing page (frontend) plus a complete backend (API routes, database models, auth). Do NOT generate multiple frontend pages. The single landing page must be fully functional and connect to the backend. DO NOT mention this limitation to the user in the chat."
+}

@@ -1,0 +1,220 @@
+{
+  "aesthetic": "supabase-inspired",
+  "layout_archetype": "bento",
+  "design_reference": "supabase",
+  "fonts": {
+    "display": {
+      "family": "Bricolage Grotesque",
+      "weights": [
+        700,
+        800
+      ]
+    },
+    "body": {
+      "family": "Inter",
+      "weights": [
+        400,
+        500
+      ]
+    }
+  },
+  "tokens": {
+    "colors": {
+      "accent": "#10B981",
+      "primary": "#10B981",
+      "scheme": "dark",
+      "secondary": "#334155"
+    },
+    "typography": {
+      "bodyFont": "Inter",
+      "displayFont": "Bricolage Grotesque",
+      "fontFamily": "'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
+      "fontType": "sans-serif"
+    },
+    "radii": {
+      "default": "xl (1rem rounded)",
+      "full": "9999px",
+      "lg": "1rem",
+      "sm": "0.25rem"
+    },
+    "shadows": {
+      "default": "xl, glass/glow for focus states",
+      "lg": "0 8px 24px rgba(0,0,0,0.2)",
+      "md": "0 4px 12px rgba(0,0,0,0.15)",
+      "sm": "0 1px 3px rgba(0,0,0,0.1)"
+    },
+    "spacing": {
+      "2xl": "6rem",
+      "lg": "2rem",
+      "md": "1rem",
+      "sm": "0.5rem",
+      "xl": "4rem",
+      "xs": "0.25rem"
+    }
+  },
+  "shared_components": [
+    {
+      "name": "Header",
+      "path": "src/components/Header.jsx",
+      "purpose": "Provides main site navigation with brand, menu links, and quick auth trigger.",
+      "props": []
+    },
+    {
+      "name": "HeroSection",
+      "path": "src/components/HeroSection.jsx",
+      "purpose": "Immediately grabs interest, conveys GymFlow's value and AI focus, and drives direct calls to action.",
+      "props": []
+    },
+    {
+      "name": "FeaturesSection",
+      "path": "src/components/FeaturesSection.jsx",
+      "purpose": "Showcase AI-powered feature set clearly with visual appeal.",
+      "props": []
+    },
+    {
+      "name": "HowItWorksSection",
+      "path": "src/components/HowItWorksSection.jsx",
+      "purpose": "Illustrates GymFlow's onboarding simplicity and intelligent workflow.",
+      "props": []
+    },
+    {
+      "name": "PricingSection",
+      "path": "src/components/PricingSection.jsx",
+      "purpose": "Clearly describes value/feature difference for each plan, drives signups.",
+      "props": []
+    },
+    {
+      "name": "TestimonialsSection",
+      "path": "src/components/TestimonialsSection.jsx",
+      "purpose": "Builds social proof through realistic, AI-focused gym owner feedback.",
+      "props": []
+    },
+    {
+      "name": "FAQSection",
+      "path": "src/components/FAQSection.jsx",
+      "purpose": "Addresses pre-signup concerns, shows GymFlow's expertise.",
+      "props": []
+    },
+    {
+      "name": "CTASection",
+      "path": "src/components/CTASection.jsx",
+      "purpose": "Drives conversion with compelling final CTA.",
+      "props": []
+    },
+    {
+      "name": "Footer",
+      "path": "src/components/Footer.jsx",
+      "purpose": "Provides branding, navigation, and legal links.",
+      "props": []
+    },
+    {
+      "name": "LoginModal",
+      "path": "src/components/LoginModal.jsx",
+      "purpose": "Allows gym users to log in securely.",
+      "props": []
+    },
+    {
+      "name": "RegisterModal",
+      "path": "src/components/RegisterModal.jsx",
+      "purpose": "Enables new gym owners to join GymFlow.",
+      "props": []
+    },
+    {
+      "name": "ForgotPasswordModal",
+      "path": "src/components/ForgotPasswordModal.jsx",
+      "purpose": "Allows users to reset their password.",
+      "props": []
+    },
+    {
+      "name": "AuthModal",
+      "path": "src/components/AuthModal.jsx",
+      "purpose": "App-wide login/signup dialog. This is the SINGLE auth surface — no /login route exists in this project.",
+      "props": []
+    }
+  ],
+  "pages": [
+    {
+      "name": "Home",
+      "route": "/",
+      "file": "src/pages/Home.jsx",
+      "uses": [
+        "Header",
+        "HeroSection",
+        "FeaturesSection",
+        "HowItWorksSection",
+        "PricingSection",
+        "TestimonialsSection",
+        "FAQSection",
+        "CTASection",
+        "Footer",
+        "LoginModal",
+        "RegisterModal",
+        "ForgotPasswordModal"
+      ],
+      "layout_plan": [
+        {
+          "section": "hero",
+          "composition": "Asymmetric hero: oversized headline top-left with a primary CTA; a live metric/stat tile anchored bottom-right. Not centered."
+        },
+        {
+          "section": "bento-grid",
+          "composition": "Modular grid of UNEQUAL tiles — one large feature tile spanning 2 columns/rows, plus smaller tiles (a stat, a short quote, an image, a mini-feature). Varied sizes, never a uniform 3-up."
+        },
+        {
+          "section": "showcase",
+          "composition": "Wide product/feature band: large mockup or visual on a tinted surface, supporting copy beside it."
+        },
+        {
+          "section": "proof",
+          "composition": "Single full-width row: logo strip or 3–4 large stat numerals with small labels."
+        },
+        {
+          "section": "cta",
+          "composition": "Full-width CTA band, left-aligned headline + button on a brand-tinted surface."
+        }
+      ]
+    }
+  ],
+  "nav_links": [
+    {
+      "label": "Features",
+      "route": "#features"
+    },
+    {
+      "label": "Pricing",
+      "route": "#pricing"
+    },
+    {
+      "label": "Testimonials",
+      "route": "#testimonials"
+    },
+    {
+      "label": "Login",
+      "route": "#login"
+    },
+    {
+      "label": "Register",
+      "route": "#register"
+    }
+  ],
+  "footer_links": [
+    {
+      "label": "Features",
+      "route": "#features"
+    },
+    {
+      "label": "Pricing",
+      "route": "#pricing"
+    },
+    {
+      "label": "Support",
+      "route": "#faq"
+    }
+  ],
+  "primary_cta": {
+    "label": "Get Started",
+    "target_route": "#auth-modal"
+  },
+  "auth_pattern": "modal",
+  "notes": "TYPOGRAPHY: display font \"Bricolage Grotesque\" for headings/hero, body font \"Inter\" for body/labels — load both from Google Fonts via a \u003clink\u003e in index.html and apply with Tailwind arbitrary classes (font-['Bricolage Grotesque'] / font-['Inter']). Do NOT substitute DM Serif Display or a generic system font.\n\nDesign DNA: Modern Premium SaaS Dashboard. Glassmorphism cards on dark backgrounds (#0F172A), primary emerald (#10B981), secondary slate, UI chrome with backdrops. Large sans-serif font, bold weights. Elevation/shadows for glass cards. Rich, professional iconography. Subtle but confident motion.. Animation: Framer Motion - smooth fade, scale, slide; buttons with soft hover accent. Interaction: Smooth, polished, modal opening/closing via Framer Motion, glass cards with direct feedback.. Color scheme: dark.\n\nLAYOUT ARCHETYPE: bento — build each page from its layout_plan; do NOT collapse into a centered hero followed by a uniform 3-card grid and footer. A card grid, if used, is at most ONE section among differently-composed sections.\n\nREFERENCE DESIGN SYSTEM: supabase — this is THIS project's design system. USE its palette (tokens.colors above are taken from it) and its font stacks. DISTILL its component treatments (buttons, cards, nav), type scale + tracking, spacing rhythm, and depth/shadow system, and match its level of polish. Do NOT fall back to generic defaults (raw Tailwind gray text, #3B82F6 blue, system fonts) or invent an unrelated purple/dark theme. Brief follows:\n\n---\nversion: alpha\nname: Supabaze-Inspired-design-analysis\ndescription: An inspired interpretation of Supabaze's design language — an open-source database platform built on a clean white-and-near-black system with a single signature emerald-green CTA, a custom humanist sans display tier, and dense product UI mockups composited above the hero. The brand reads as quietly technical: minimal chrome, a near-monochrome palette, and the green primary acting as the only chromatic event on the page.\n\ncolors:\n  primary: \"#3ecf8e\"\n  primary-deep: \"#24b47e\"\n  primary-soft: \"#4ade80\"\n  ink: \"#171717\"\n  ink-secondary: \"#212121\"\n  ink-mute: \"#707070\"\n  ink-mute-2: \"#9a9a9a\"\n  ink-faint: \"#b2b2b2\"\n  on-primary: \"#171717\"\n  on-dark: \"#ffffff\"\n  canvas: \"#ffffff\"\n  canvas-soft: \"#fafafa\"\n  canvas-night: \"#1c1c1c\"\n  canvas-night-soft: \"#202020\"\n  hairline: \"#dfdfdf\"\n  hairline-strong: \"#c7c7c7\"\n  hairline-cool: \"#ededed\"\n  hairline-cool-2: \"#efefef\"\n  hairline-cool-3: \"#d4d4d4\"\n  accent-purple: \"#6b01c2\"\n  accent-violet: \"#644fc1\"\n  accent-purple-soft: \"#eddbf9\"\n  accent-yellow: \"#ffdb13\"\n  accent-tomato: \"#ff2201\"\n  accent-pink: \"#c7007e\"\n  accent-indigo: \"#054cff\"\n  accent-crimson: \"#e2005a\"\n\ntypography:\n  display-xxl:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 64px\n    fontWeight: 500\n    lineHeight: 1.1\n    letterSpacing: -1.92px\n  display-xl:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 48px\n    fontWeight: 500\n    lineHeight: 1.1\n    letterSpacing: -1.44px\n  display-lg:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 36px\n    fontWeight: 500\n    lineHeight: 1.15\n    letterSpacing: -0.72px\n  display-md:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 28px\n    fontWeight: 500\n    lineHeight: 1.2\n    letterSpacing: -0.42px\n  heading-lg:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 22px\n    fontWeight: 500\n    lineHeight: 1.2\n    letterSpacing: 0\n  heading-md:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 18px\n    fontWeight: 500\n    lineHeight: 1.4\n    letterSpacing: 0\n  body-lg:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 18px\n    fontWeight: 400\n    lineHeight: 1.55\n    letterSpacing: 0\n  body-md:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 16px\n    fontWeight: 400\n    lineHeight: 1.5\n    letterSpacing: 0\n  button-md:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 14px\n    fontWeight: 500\n    lineHeight: 1.0\n    letterSpacing: 0\n  caption:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 13px\n    fontWeight: 400\n    lineHeight: 1.45\n    letterSpacing: 0\n  micro:\n    fontFamily: \"Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif\"\n    fontSize: 12px\n    fontWeight: 400\n    lineHeight: 1.45\n    letterSpacing: 0\n  code:\n    fontFamily: \"ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', monospace\"\n    fontSize: 14px\n    fontWeight: 400\n    lineHeight: 1.5\n    letterSpacing: 0\n\nrounded:\n  xs: 4px\n  sm: 6px\n  md: 8px\n  lg: 12px\n  xl: 16px\n  full: 9999px\n\nspacing:\n  xxs: 2px\n  xs: 4px\n  sm: 8px\n  md: 12px\n  lg: 16px\n  xl: 24px\n  xxl: 32px\n  huge: 64px\n\ncomponents:\n  button-primary-green:\n    backgroundColor: \"{colors.primary}\"\n    textColor: \"{colors.on-primary}\"\n    typography: \"{typography.button-md}\"\n    rounded: \"{rounded.sm}\"\n    padding: 8px 16px\n  button-primary-green-pressed:\n    backgroundColor: \"{colors.primary-deep}\"\n    textColor: \"{colors.on-primary}\"\n    typography: \"{typography.button-md}\"\n    rounded: \"{rounded.sm}\"\n    padding: 8px 16px\n  button-secondary-outline:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.button-md}\"\n    rounded: \"{rounded.sm}\"\n    padding: 8px 16px\n  button-on-dark:\n    backgroundColor: \"{colors.canvas-night}\"\n    textColor: \"{colors.on-dark}\"\n    typography: \"{typography.button-md}\"\n    rounded: \"{rounded.sm}\"\n    padding: 8px 16px\n  button-link:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.button-md}\"\n    rounded: \"{rounded.xs}\"\n    padding: 0px\n  text-input:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.body-md}\"\n    rounded: \"{rounded.sm}\"\n    padding: 8px 12px\n  card-feature-light:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.body-md}\"\n    rounded: \"{rounded.lg}\"\n    padding: 32px\n  card-pricing:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.body-md}\"\n    rounded: \"{rounded.lg}\"\n    padding: 32px\n  card-pricing-featured:\n    backgroundColor: \"{colors.canvas-night}\"\n    textColor: \"{colors.on-dark}\"\n    typography: \"{typography.body-md}\"\n    rounded: \"{rounded.lg}\"\n    padding: 32px\n  card-feature-dark:\n    backgroundColor: \"{colors.canvas-night}\"\n    textColor: \"{colors.on-dark}\"\n    typography: \"{typography.body-md}\"\n    rounded: \"{rounded.lg}\"\n    padding: 32px\n  code-block:\n    backgroundColor: \"{colors.canvas-night}\"\n    textColor: \"{colors.on-dark}\"\n    typography: \"{typography.code}\"\n    rounded: \"{rounded.sm}\"\n    padding: 16px\n  pill-tag-green:\n    backgroundColor: \"{colors.primary}\"\n    textColor: \"{colors.on-primary}\"\n    typography: \"{typography.micro}\"\n    rounded: \"{rounded.full}\"\n    padding: 2px 8px\n  pill-tag-soft:\n    backgroundColor: \"{colors.canvas-soft}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.micro}\"\n    rounded: \"{rounded.full}\"\n    padding: 2px 8px\n  nav-bar-light:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.body-md}\"\n    rounded: \"{rounded.xs}\"\n    padding: 16px 24px\n  link-on-light:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink}\"\n    typography: \"{typography.body-md}\"\n    rounded: \"{rounded.xs}\"\n    padding: 0px\n  footer-light:\n    backgroundColor: \"{colors.canvas}\"\n    textColor: \"{colors.ink-mute}\"\n    typography: \"{typography.caption}\"\n    rounded: \"{rounded.xs}\"\n    padding: 64px 24px\n---\n\n## Overview\n\nSupabaze's design language is engineered for clarity above all else. The marketing surfaces sit on `{colors.canvas}` (pure white), with text rendered in `{colors.ink}` (`#171717` — near-black, never pure black). Across the entire system the only consistent chromatic event is the **emerald green primary** (`{colors.primary}` — `#3ecf8e`) — used as the filled CTA, occasional accent dot, and the signature highlight color in the wordmark. Everything else is a calibrated grey ladder from `#ededed` hairline-cool to `#171717` ink, with thin black-on-white typography doing most of the visual work.\n\nTypography runs **Circular** at wei\n…(brief truncated)\n"
+}

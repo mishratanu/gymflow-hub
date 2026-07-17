@@ -1,0 +1,22 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "./start.sh"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+sleepApplication = true
+
+[deploy.multiRegionConfig."asia-southeast1-eqsg3a"]
+numReplicas = 1
+
+[deploy.limitOverride.containers]
+cpu = 2
+memoryBytes = 5368709120
+
+[[deploy.healthcheck]]
+path = "/api/health"
+interval = 30
+timeout = 5
+startPeriod = 10
