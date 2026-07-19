@@ -2,7 +2,7 @@
 // Every page/component MUST use apiGet/apiPost/apiPut/apiDelete — never a hand-rolled fetch.
 // Paths come from .api_contract.json — the single source of truth shared with the backend generator.
 
-export const API_BASE_URL = "https://proj-00822357-production.up.railway.app"; // same-origin; never hardcode http://localhost
+export const API_BASE_URL = import.meta.env.VITE_API_URL || "https://proj-00822357-production.up.railway.app"; // local fallback or prod
 
 // UNAVAILABLE ENDPOINTS — the backend does NOT register these routes; calling them returns 404.
 // Do NOT fetch these paths (not via the helpers, not via raw fetch). Use static/local data instead:
@@ -18,6 +18,10 @@ export const API_ENDPOINTS = {
   ME:              '/api/auth/me',
   FORGOT_PASSWORD: '/api/auth/forgot-password',
   RESET_PASSWORD:  '/api/auth/reset-password',
+
+  // Members (all require JWT)
+  MEMBERS:         '/api/members',
+  MEMBER_BY_ID:    (id) => `/api/members/${id}`,
 };
 
 // Token key — must match the key used in AuthContext

@@ -31,6 +31,15 @@ func RegisterRoutes(r *gin.Engine) {
 			// Protected: requires valid JWT
 			auth.GET("/me", middleware.AuthMiddleware(), handler.GetMe)
 		}
+
+		// Members endpoints — all require authentication
+		members := api.Group("/members", middleware.AuthMiddleware())
+		{
+			members.GET("", handler.ListMembers)
+			members.POST("", handler.CreateMember)
+			members.PUT("/:id", handler.UpdateMember)
+			members.DELETE("/:id", handler.DeleteMember)
+		}
 	}
 
 	// RAG proxy — consumed by imagine.bo-chat-widget.js

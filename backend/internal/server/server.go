@@ -3,10 +3,12 @@ package server
 import (
 	"context"
 	"errors"
+	"fmt"
 	"imagine_backend/config"
 	webserver "imagine_backend/internal"
 	"imagine_backend/internal/db"
 	"imagine_backend/internal/middleware"
+	"imagine_backend/internal/model"
 	"io/fs"
 	"log"
 	"net/http"
@@ -22,6 +24,25 @@ import (
 func StartServer() {
 	config.LoadConfig()
 	db.ConnectToDB()
+
+	schema := config.AppConfig.DBSchema
+	if schema != "" {
+		db.DB.Exec(fmt.Sprintf(`CREATE SCHEMA IF NOT EXISTS "%s"`, schema))
+		db.DB.Exec(fmt.Sprintf(`SET search_path TO "%s"`, schema))
+	}
+	db.DB.AutoMigrate(
+		&model.User{},
+		&model.Member{},
+		&model.Trainer{},
+		&model.MembershipPlan{},
+		&model.Attendance{},
+		&model.Payment{},
+		&model.Notification{},
+		&model.Testimonial{},
+		&model.Pricing{},
+		&model.Feature{},
+		&model.FAQ{},
+	)
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()

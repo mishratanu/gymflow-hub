@@ -42,7 +42,7 @@ const PaymentsPage = () => {
       ),
     },
     {
-      key: 'id',
+      key: 'receipt_action',
       label: '',
       align: 'right',
       render: () => (
